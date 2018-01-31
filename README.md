@@ -1,1 +1,7 @@
-# Rust学习用
+# Rust学习代码
+
+参考
+
+- [RustPrimer](https://github.com/rustcc/RustPrimer)
+- [tprl-zh-cn](https://github.com/KaiserY/trpl-zh-cn)
+- [rust-lang](rust-lang.org)
