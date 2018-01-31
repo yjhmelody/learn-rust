@@ -1,0 +1,7 @@
+[package]
+name = "ffi"
+version = "0.1.0"
+authors = ["yjhmelody <465402634@qq.com>"]
+
+[dependencies]
+libc = "0.2.36"
