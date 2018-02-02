@@ -4,4 +4,4 @@
 
 - [RustPrimer](https://github.com/rustcc/RustPrimer)
 - [tprl-zh-cn](https://github.com/KaiserY/trpl-zh-cn)
-- [rust-lang](rust-lang.org)
+- [rust-lang](https://www.rust-lang.org)
