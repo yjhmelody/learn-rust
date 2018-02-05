@@ -48,4 +48,14 @@ fn main() {
     // 量无效化了，这个操作被称为 移动（move），而不是浅拷贝。
 
     println!("{}", s2);
+    let s: &[str] = "hello world";
+    let e = Extrema{a:s, b:&2};
+    println!("{:?}", e);
+}
+
+
+#[derive(Debug)]
+struct Extrema<'elt> {
+    a: &'elt str,
+    b: &'elt i32,
 }
