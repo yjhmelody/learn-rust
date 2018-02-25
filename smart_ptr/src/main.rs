@@ -10,6 +10,24 @@ use std::cell::RefCell;
 
 use std::collections::HashMap;
 
+// Rust 无法计算出要为定义为递归的类型分配多少空间
+// 所以可以将 Box 放入 Cons 成员中而不是直接存放另一个 List 值。 Box 会指向另一个位
+// 于堆上的 List 值，而不是存放在 Cons 成员中。从概念上讲，我们仍然有一个通过在其中
+// “存放” 其他列表创建的列表，不过现在实现这个概念的方式更像是一个项挨着另一项，而不
+// 是一项包含另一项。
+#[derive(Debug)]
+enum List {
+    Cons(i32, Box<List>),
+    Nil,
+}
+
+use List::{Cons, Nil};
+
+fn list_test() {
+    let list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
+    print!("{:?}", list);
+}
+
 
 fn main() {
     // rc_test();
@@ -18,7 +36,8 @@ fn main() {
     // mutex_test();
     // rwLock_test();
     // cell_test();
-    ref_cell_test();
+    // ref_cell_test();
+    list_test();
 }
 
 
@@ -154,3 +173,6 @@ fn ref_cell_test() {
 
     println!("{:?}", shared_map.borrow());
 }
+
+
+
